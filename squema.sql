@@ -1,0 +1,25 @@
+DROP TABLE IF EXISTS posts;
+
+CREATE TABLE posts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    os TEXT,
+    nome TEXT NOT NULL,
+    sobrenome TEXT NOT NULL,
+    endereço TEXT NOT NULL,
+    cep TEXT,
+    telefone TEXT NOT NULL,
+    email TEXT NOT NULL,
+    placa TEXT NOT NULL,
+    fabricante TEXT NOT NULL,
+    modelo TEXT NOT NULL,
+    serviços TEXT,
+    dataAgend TEXT,
+    horario TEXT,
+    dataEntrada TEXT,
+    dataEntrega TEXT,
+    valorPrevisto TEXT,
+    valorRecebido TEXT,
+    serviçoRealizado TEXT,
+    mensagem TEXT,
+);

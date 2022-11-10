@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{{url_for('static', filename='favicon.ico')}}">
+
+    <title>FS Garagem</title>
+
+    <!-- Principal CSS do Bootstrap -->
+    <link href="{{url_for('static', filename='bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- Estilos customizados para este template -->
+    <link href="{{url_for('static', filename='carousel.css')}}" rel="stylesheet">
+  </head>
+
+  <body class="bg-light">
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/#">Home <span class="sr-only">(atual)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/Sobre">Sobre <span class="sr-only">(atual)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/Serviços">Serviços <span class="sr-only">(atual)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/formulario">Agendamento <span class="sr-only">(atual)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/login">Login <span class="sr-only">(atual)</span></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <header class="masthead">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="page-heading">
+                        <h1>Agendamento Online</h1>
+                        <span class="subheading">Agende seu serviço pelo formulario.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+  
+
+    <div class="container">
+        <hr>
+      <form method="post">
+        <div class="form=group col-lf-10">
+            <div class="form=group col-md-5"><label for="nome">Nome</label></div>
+            <div class="row col-md-10">
+                <div class="col">
+                    <input type="text" name="nome" placeholder="Digite seu nome" class="form-control" value="{{request.form['nome']}}"></input>
+            </div>
+            <div class="col">
+                <input type="text" name="sobrenome" placeholder="Digite seu sobrenome" class="form-control" value="{{request.form['sobrenome']}}"></input>
+            </div>
+        </div>
+        <!--div class="form=group col-md-5">
+          <label for="nome">Nome</label>
+          <input type="text" name="nome" placeholder="Digite seu nome" class="form-control" value="{{request.form['nome']}}"></input>
+        </div-->
+        <hr>
+        <div class="form=group col-md-5">
+            <label for="endereço">Endereço</label>
+            <input type="text" name="endereço" placeholder="Digite seu endereço" class="form-control" value="{{request.form['endereço']}}"></input>
+        </div>
+        <hr>
+        <div class="form=group col-md-5">
+            <label for="cep">CEP</label>
+            <input type="text" name="cep" placeholder="Digite seu CEP" class="form-control" value="{{request.form['cep']}}"></input>
+        </div>
+        <hr>
+        <div class="form=group col-md-5">
+            <label for="telefone">Telefone</label>
+            <input type="text" name="telefone" placeholder="Digite seu número de telefone para contato" class="form-control" value="{{request.form['telefone']}}"></input>
+        </div>
+        <hr>
+        <div class="form=group col-md-5">
+            <label for="email">E-mail</label>
+            <input type="text" name="email" placeholder="Digite seu email" class="form-control" value="{{request.form['email']}}"></input>
+          </div>
+          <hr>  
+        <div class="form=group col-md-5">
+            <label for="modelo">Veículo</label>
+            <input type="text" name="modelo" placeholder="Informe qual é o modelo de seu veículo" class="form-control" value="{{request.form['modelo']}}"></input>
+        </div>
+        <hr>
+        <div class="form=group col-md-5">
+            <label for="placa">Placa</label>
+            <input type="text" name="placa" placeholder="Informe a placa de seu veículo" class="form-control" value="{{request.form['placa']}}"></input>
+        </div>
+        <hr>
+        <div class="form=group col-md-5">
+            <label for="fabricante">Fabricante</label>
+            <input type="text" name="fabricante" placeholder="Informe o fabricante do veículo" class="form-control" value="{{request.form['fabricante']}}"></input>
+        </div>
+        <hr>
+        <p>Selecione o serviço que deseja realizar</p>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="serviços" id="serviços" value="lavagem convencional">
+            <label class="form-check-label" for="serviços">
+                Lavagem convencional
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="serviços" id="serviços" value="lavagem+motor">
+            <label class="form-check-label" for="serviços">
+                Lavagem + Motor
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="serviços" id="serviços" value="lavagem+enceramento">
+            <label class="form-check-label" for="serviços">
+                Lavagem + enceramento
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="serviços" id="serviços" value="lavagem+Chassis">
+            <label class="form-check-label" for="serviços">
+                Lavagem + Chassis
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="serviços" id="serviços" value="polimento">
+            <label class="form-check-label" for="serviços">
+                Polimento
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="serviços" id="serviços" value="cristalização">
+            <label class="form-check-label" for="serviços">
+                Cristalização
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="serviços" id="serviços" value="higienização">
+            <label class="form-check-label" for="serviços">
+                Higienização
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="serviços" id="serviços" value="Revitalização de faróis">
+            <label class="form-check-label" for="serviços">
+                Revitalização de faróis
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="serviços" id="serviços" value="Não selecionado" checked>
+            <label class="form-check-label" for="serviços">
+                Serviço não selecionado
+            </label>
+        </div>
+        <hr>
+        <div class="form=group col-md-5">
+            <label for="dataAgend">Selecione uma data</label>
+            <input type="date" name="dataAgend" placeholder="Selecione uma data" class="form-control" value="{{ request.form['dataAgend']}}"></input>
+        </div>
+        <hr>
+        <p>Selecione um horário</p>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="horario" id="horario" value="8:30">
+            <label class="form-check-label" for="horario">
+                08:30
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="horario" id="horario" value="10:30">
+            <label class="form-check-label" for="horario">
+                10:30
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="horario" id="horario" value="12:30">
+            <label class="form-check-label" for="horario">
+                12:30
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="horario" id="horario" value="14:30">
+            <label class="form-check-label" for="horario">
+                14:30
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="horario" id="horario" value="16:30">
+            <label class="form-check-label" for="horario">
+                16:30
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="horario" id="horario" value="Horário não selecionado" checked>
+            <label class="form-check-label" for="horario">
+                Horário não selecionado
+            </label>
+        </div>
+        <hr>
+        <div class="form=group col-md-5">
+            <label for="messagem">Messagem:</label>
+            <textarea class="form-control" name="mensagem" id="mensagem" placeholder="Deixe sua mensagem aqui" style="height: 12rem" data-sb-validations="required" value="{{request.form['mensagem']}}"></textarea>
+            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+        </div>
+        <hr>  
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+      </form>
+    </div>
+    <!-- Footer-->
+    <!--footer class="border-top">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <ul class="list-inline text-center">
+                        
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="small text-center text-muted fst-italic">Copyright &copy; Univesp 2022</div>
+                </div>
+            </div>
+        </div>
+    </footer-->
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="../static/js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{{url_for('static', filename='favicon.ico')}}">
+
+    <title>FS Garagem</title>
+
+    <!-- Principal CSS do Bootstrap -->
+    <link href="{{url_for('static', filename='bootstrap.min.css')}}" rel="stylesheet">
+    
+    <!-- Estilos customizados para esse template -->
+    <link href="{{url_for('static', filename='signin.css')}}" rel="stylesheet">
+
+  </head>
+
+  <body class="text-center">
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/#">Home <span class="sr-only">(atual)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/Sobre">Sobre <span class="sr-only">(atual)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/Serviços">Serviços <span class="sr-only">(atual)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/formulario">Agendamento <span class="sr-only">(atual)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/login">Login <span class="sr-only">(atual)</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <br>
+
+    <div class="container col-md-3">
+    <form method="post">
+      <div class="form=group">
+        <label for="loginIn">Login</label>
+        <input type="text" name="loginIn" placeholder="Digite seu login" class="form-control" value="{{request.form['loginIn']}}"></input>
+      </div>
+      <p></p>
+      <div class="form=group">
+          <label for="senha">Senha</label>
+          <input type="password" name="senha" placeholder="Digite sua senha" class="form-control" value="{{request.form['senha']}}"></input>
+      </div>
+      <p></p>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Entrar</button>
+      </div>
+    </form>
+    </div>
+  </body>
+</html>
